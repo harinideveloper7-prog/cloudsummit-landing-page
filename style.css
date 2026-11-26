@@ -1,0 +1,649 @@
+/* === 1. CSS Reset & Box Model === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background-color: #fafaf9;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .logo {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.1rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 42px;
+  font-size: 1.05rem;
+}
+
+/* === 2. Header & Navigation Bar (Flexbox) === */
+.site-header {
+  background-color: #111827;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #0f766e;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #f59e0b;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fbbf24;
+}
+
+.nav-links .nav-btn {
+  background-color: #0f766e;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links .nav-btn:hover {
+  background-color: #0d9488;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* === 3. Hero Section & Reveal Animations === */
+.hero {
+  background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+  animation: slideZoomIn 0.85s ease-out both;
+}
+
+.event-badge {
+  display: inline-block;
+  background-color: rgba(245, 158, 11, 0.18);
+  color: #fde68a;
+  border: 1px solid #f59e0b;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-size: 2.95rem;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #ecfdf5;
+  margin-bottom: 30px;
+}
+
+/* Staggered CTA reveal matching translate(0px, 0px) & opacity: 1 */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: ctaReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transform: translate(0px, 0px);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #f59e0b;
+  color: #111827;
+}
+
+.btn-primary:hover {
+  background-color: #fbbf24;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.btn-secondary {
+  border: 2px solid #99f6e4;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* === 4. Features / Highlights Section (Flexbox & 3D Perspective Tilt) === */
+.features-section {
+  background-color: #ffffff;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  flex: 1 1 280px;
+  background-color: #fafaf9;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease,
+              background-color 0.35s ease;
+}
+
+.feature-card:hover {
+  transform: perspective(900px) rotateX(4deg) translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(15, 118, 110, 0.15);
+  border-color: #f59e0b;
+  background-color: #ffffff;
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.feature-card:hover .feature-icon {
+  transform: translateY(-6px) rotate(-10deg) scale(1.2);
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.feature-card p {
+  color: #4b5563;
+  font-size: 0.96rem;
+}
+
+/* === 5. Speakers Section (ID Selector, CSS Grid & 3D Perspective Tilt) === */
+#speakers {
+  background-color: #f0fdfa;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.speaker-card {
+  background-color: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-radius: 12px;
+  padding: 26px 20px;
+  text-align: center;
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+}
+
+.speaker-card:hover {
+  transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.14);
+}
+
+.speaker-avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.speaker-card:hover .speaker-avatar {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+.avatar-teal { background-color: #0f766e; }
+.avatar-emerald { background-color: #059669; }
+.avatar-amber { background-color: #d97706; }
+.avatar-coral { background-color: #e11d48; }
+
+.speaker-card h3 {
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.speaker-role {
+  color: #0f766e;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.speaker-bio {
+  color: #4b5563;
+  font-size: 0.92rem;
+}
+
+/* === 6. Event Schedule Section (CSS Grid with auto-fill) === */
+#schedule {
+  background-color: #ffffff;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.schedule-card {
+  background-color: #fafaf9;
+  border-left: 4px solid #0f766e;
+  border-top: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 22px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.schedule-card:hover {
+  transform: translateX(-6px);
+  background-color: #f0fdfa;
+}
+
+.time-slot {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 8px;
+}
+
+.schedule-card > h3 {
+  margin-bottom: 8px;
+  color: #111827;
+  font-size: 1.12rem;
+}
+
+.schedule-card p {
+  color: #4b5563;
+  font-size: 0.94rem;
+}
+
+/* === 7. Registration Section (ID & Attribute Selectors) === */
+#register {
+  background-color: #e6f4f1;
+}
+
+.register-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 36px;
+  border-radius: 12px;
+  border: 1px solid #99f6e4;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.06);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.16);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: #0f766e;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+}
+
+/* === 8. Footer === */
+.site-footer {
+  background-color: #111827;
+  color: #d1d5db;
+  padding: 40px 20px 24px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.footer-venue {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.footer-links p {
+  margin-bottom: 4px;
+}
+
+.footer-links a {
+  color: #fbbf24;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.88rem;
+  color: #9ca3af;
+}
+
+/* === 9. CSS Keyframe Animations === */
+@keyframes slideZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes ctaReveal {
+  from {
+    opacity: 0;
+    transform: translate(0px, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+/* === 10. Responsive Media Queries === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .register-box {
+    padding: 24px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+}
+
+
+/* === 11. Floating WhatsApp Button === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 26px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 68px;
+  background-color: #111827;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+}

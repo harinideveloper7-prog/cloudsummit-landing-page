@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudSummit 2027 | AI &amp; Cloud Tech Conference</title>
+  <!-- External CSS file for VS Code project -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Header and Navigation Bar -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">CloudSummit<span>2027</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Highlights</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#schedule">Agenda</a></li>
+        <li><a href="#register" class="nav-btn">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="event-badge">January 24, 2027 &bull; Horizon Convention Hall</span>
+        <h1>Shape the Future of Cloud &amp; AI Engineering</h1>
+        <p>
+          Connect with software engineers, cloud architects, and AI builders for a full day
+          of architecture talks, live system demos, and practical labs.
+        </p>
+        <div class="hero-buttons">
+          <a href="#register" class="btn-primary">Claim Your Pass</a>
+          <a href="#schedule" class="btn-secondary">Explore Agenda</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Features / Highlights Section (Flexbox) -->
+    <section id="features" class="section features-section">
+      <div class="container">
+        <h2 class="section-title">Why Attend CloudSummit?</h2>
+        <p class="section-subtitle">Practical engineering insights you can apply right away.</p>
+
+        <div class="features-container">
+          <div class="feature-card">
+            <div class="feature-icon">&#128187;</div>
+            <h3>Live Architecture Labs</h3>
+            <p>Walk through real-world cloud deployments, API scaling, and container setups step by step.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">&#129302;</div>
+            <h3>AI Builder Showcases</h3>
+            <p>See how teams integrate language models, vector search, and automation into production apps.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">&#9881;&#65039;/div>
+            <h3>Engineering Peer Circles</h3>
+            <p>Join small-group roundtables with cloud architects, DevOps leads, and startup founders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Speakers Section (CSS Grid with repeat, auto-fit, minmax) -->
+    <section id="speakers" class="section speakers-section">
+      <div class="container">
+        <h2 class="section-title">Keynote Speakers</h2>
+        <p class="section-subtitle">Industry practitioners sharing real lessons from production systems.</p>
+
+        <div class="speakers-grid">
+          <article class="speaker-card">
+            <div class="speaker-avatar avatar-teal">NR</div>
+            <h3>Nadia Rahman</h3>
+            <p class="speaker-role">Principal Cloud Architect</p>
+            <p class="speaker-bio">Designs resilient multi-region cloud infrastructure and teaches Kubernetes fundamentals.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar avatar-emerald">OC</div>
+            <h3>Owen Carter</h3>
+            <p class="speaker-role">AI Systems Lead</p>
+            <p class="speaker-bio">Builds retrieval pipelines and evaluates real-world LLM reliability for developer tools.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar avatar-amber">PS</div>
+            <h3>Priya Sharma</h3>
+            <p class="speaker-role">DevOps Engineer</p>
+            <p class="speaker-bio">Automates CI/CD workflows, observability dashboards, and zero-downtime releases.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-avatar avatar-coral">LM</div>
+            <h3>Lucas Meyer</h3>
+            <p class="speaker-role">Security Specialist</p>
+            <p class="speaker-bio">Focuses on API security, identity management, and cloud compliance for growing teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Event Schedule Section (CSS Grid with repeat, auto-fill, minmax) -->
+    <section id="schedule" class="section schedule-section">
+      <div class="container">
+        <h2 class="section-title">Conference Agenda</h2>
+        <p class="section-subtitle">Six focused sessions from morning keynotes to evening lightning talks.</p>
+
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <span class="time-slot">09:00 AM - 09:45 AM</span>
+            <h3>Registration &amp; Breakfast</h3>
+            <p>Check in at the main desk, pick up your conference badge, and enjoy morning coffee.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="time-slot">10:00 AM - 11:30 AM</span>
+            <h3>Cloud Architecture Foundations</h3>
+            <p>Learn how modern web apps scale across load balancers and containers with Nadia Rahman.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="time-slot">11:45 AM - 01:00 PM</span>
+            <h3>Building Practical AI Workflows</h3>
+            <p>Explore prompt pipelines, vector databases, and evaluation metrics with Owen Carter.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="time-slot">01:00 PM - 02:00 PM</span>
+            <h3>Networking Lunch &amp; Expo</h3>
+            <p>Grab lunch, visit sponsor demo booths, and meet engineers from local tech teams.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="time-slot">02:00 PM - 03:30 PM</span>
+            <h3>CI/CD &amp; Cloud Security Basics</h3>
+            <p>Set up automated testing and secure API keys in production with Priya Sharma &amp; Lucas Meyer.</p>
+          </div>
+
+          <div class="schedule-card">
+            <span class="time-slot">03:45 PM - 04:30 PM</span>
+            <h3>Lightning Talks &amp; Closing Panel</h3>
+            <p>Fast 5-minute community demos followed by an open Q&amp;A with all keynote speakers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Registration Section -->
+    <section id="register" class="section register-section">
+      <div class="container">
+        <div class="register-box">
+          <h2 class="section-title">Register for CloudSummit 2027</h2>
+          <p class="section-subtitle">Fill out the form below to reserve your conference pass.</p>
+
+          <form class="register-form" action="#register" method="get">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="ticket-type">Ticket Type</label>
+              <select id="ticket-type" name="ticket-type" required>
+                <option value="">-- Select ticket type --</option>
+                <option value="student">Student Pass (Free)</option>
+                <option value="developer">Developer Pass ($35)</option>
+                <option value="all-access">All-Access + Lab Pass ($65)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="track">Conference Track</label>
+              <select id="track" name="track" required>
+                <option value="">-- Choose a track --</option>
+                <option value="cloud">Cloud Infrastructure</option>
+                <option value="ai">Applied AI Engineering</option>
+                <option value="devops">DevOps &amp; Security</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="experience">Experience Level</label>
+              <select id="experience" name="experience">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="terms" name="terms" required>
+              <label for="terms">I agree to receive conference updates and lab guides by email.</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Complete Registration</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>CloudSummit 2027</h3>
+        <p>An annual tech conference for cloud, AI, and software builders.</p>
+        <p class="footer-venue">Horizon Convention Hall &bull; Outer Ring Road, Bengaluru, India</p>
+      </div>
+      <div class="footer-links">
+        <p>Email: <a href="mailto:hello@cloudsummit.example">hello@cloudsummit.example</a></p>
+        <p>Phone: <a href="tel:+15550142027">+1 (555) 014-2027</a></p>
+        <div class="social-links">
+          <a href="#home">GitHub</a>
+          <a href="#home">LinkedIn</a>
+          <a href="#home">X / Twitter</a>
+          <a href="#home">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2027 CloudSummit Conference. Built with HTML &amp; CSS.</p>
+  </footer>
+
+
+  <!-- 8. Floating WhatsApp Contact Button -->
+  <a
+    href="https://wa.me/15550142027"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float"
+    aria-label="Chat with us on WhatsApp"
+    title="Quick Contact on WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.29.6 4.53 1.74 6.51L3 29l6.68-1.75A12.94 12.94 0 0 0 16.01 29C23.18 29 29 23.17 29 16S23.18 3 16.01 3zm7.58 18.43c-.32.9-1.88 1.72-2.61 1.83-.68.1-1.54.15-2.49-.16-.58-.19-1.33-.44-2.29-.85-4.03-1.74-6.66-5.82-6.86-6.09-.2-.27-1.64-2.18-1.64-4.16 0-1.98 1.04-2.95 1.41-3.35.37-.4.8-.5 1.07-.5.27 0 .54 0 .77.01.25.01.58-.09.91.7.34.81 1.15 2.8 1.25 3 .1.2.17.44.03.7-.14.27-.2.44-.4.67-.2.24-.42.53-.6.71-.2.2-.41.42-.18.82.23.4 1.03 1.7 2.21 2.75 1.52 1.35 2.8 1.77 3.2 1.97.4.2.64.17.87-.1.24-.27 1.01-1.18 1.28-1.58.27-.4.54-.34.91-.2.37.13 2.34 1.1 2.74 1.3.4.2.67.3.77.47.1.17.1.98-.22 1.88z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+  </a>
+
+</body>
+</html>
